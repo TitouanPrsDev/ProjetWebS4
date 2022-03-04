@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ category.name }} | ProjetWebS4{% endblock %}
+
+{% block body %}
+    <h2>Category : {{ category.name }}</h2>
+
+    <div class="container" id="container_list">
+        {% if products != null %}
+            {% for product in products %}
+                <a class="item" href="{{ path('product_detail', { 'product': product.id }) }}">
+                    <p>{{ product.name }}</p>
+
+                    <img src="{{ asset('images/icons/arrow-right-solid.svg') }}" alt="Right arrow icon">
+                </a>
+            {% endfor %}
+        {% else %}
+            <p>No products available...</p>
+        {% endif %}
+    </div>
+{% endblock %}

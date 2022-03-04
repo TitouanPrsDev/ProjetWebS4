@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Brands | ProjetWebS4{% endblock %}
+
+{% block body %}
+    <h2>Brands</h2>
+
+    <div class="container" id="container_list">
+        {% if brands != null %}
+            {% for brand in brands %}
+                <a class="item" href="{{ path('brand_detail', { 'brand': brand.id }) }}">
+                    <p>{{ brand.name }}</p>
+
+                    <img src="{{ asset('images/icons/arrow-right-solid.svg') }}" alt="Right arrow icon">
+                </a>
+            {% endfor %}
+        {% else %}
+            <p>No brands available...</p>
+        {% endif %}
+    </div>
+{% endblock %}

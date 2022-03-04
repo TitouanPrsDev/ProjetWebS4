@@ -1,0 +1,25 @@
+header {
+    display: flex;
+    align-items: center;
+    margin: 2rem 4rem;
+}
+
+header h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+header .menus {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 4rem;
+}
+
+header .menus .menus_left a:not(:last-child) {
+    margin-right: 2rem;
+}
+
+header .menus a {
+    font-weight: 500;
+}
